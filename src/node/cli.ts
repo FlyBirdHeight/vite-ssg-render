@@ -12,7 +12,6 @@ cli
         const server = await createDevServer(root);
         await server.listen();
         server.printUrls();
-
     })
 
 cli
