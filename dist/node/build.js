@@ -36,6 +36,7 @@ async function bundle(root) {
 exports.bundle = bundle;
 async function renderPage(render, root, clientBundle) {
     const appHtml = render();
+    const clientChunk = clientBundle.output.find((chunk) => chunk.type === "chunk" && chunk.isEntry);
     const html = `
         <!DOCTYPE html>
         <html lang="en">
@@ -49,6 +50,7 @@ async function renderPage(render, root, clientBundle) {
             <div id="app">
                 ${appHtml}
             </div>
+            <script src="/${clientChunk.fileName}" type="module"></script>
         </body>
         </html>
     `.trim();
@@ -63,8 +65,7 @@ exports.renderPage = renderPage;
  */
 async function build(root = process.cwd()) {
     //1. 打包代码，包括 client 端 + server 端
-    const [clientBundle, serverBundle] = await bundle(root);
-    debugger;
+    const [clientBundle] = await bundle(root);
     //2. 引入 server-entry 模块
     const serverEntryPath = (0, path_1.join)(root, ".temp", "ssr-entry.js");
     //3. 服务端渲染，产出
