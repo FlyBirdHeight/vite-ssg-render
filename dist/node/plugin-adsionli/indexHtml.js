@@ -6,6 +6,22 @@ const index_1 = require("../constants/index");
 function pluginIndexHtml() {
     return {
         name: 'adsionli: index-html',
+        apply: "serve",
+        transformIndexHtml(html) {
+            return {
+                html,
+                tags: [
+                    {
+                        tag: "script",
+                        attrs: {
+                            type: "module",
+                            src: `/@fs/${index_1.CLIENT_ENTRY_PATH}`
+                        },
+                        injectTo: 'body'
+                    }
+                ]
+            };
+        },
         configureServer(server) {
             return () => {
                 server.middlewares.use(async (req, res, next) => {

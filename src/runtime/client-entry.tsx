@@ -8,7 +8,8 @@ function renderInBrowser() {
     throw new Error('#app element is not exist!')
   }
 
-  createRoot(containerEl).render(<App />)
+  const root = createRoot(containerEl)
+  root.render(<App />)
 }
 
 renderInBrowser()

@@ -9,6 +9,7 @@ function renderInBrowser() {
     if (!containerEl) {
         throw new Error('#app element is not exist!');
     }
-    (0, client_1.createRoot)(containerEl).render((0, jsx_runtime_1.jsx)(App_1.App, {}));
+    const root = (0, client_1.createRoot)(containerEl);
+    root.render((0, jsx_runtime_1.jsx)(App_1.App, {}));
 }
 renderInBrowser();
