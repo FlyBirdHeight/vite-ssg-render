@@ -1,9 +1,9 @@
-import { createServer } from "vite";
+import { createServer } from 'vite';
 import { pluginIndexHtml } from './plugin-adsionli/indexHtml';
-import react from '@vitejs/plugin-react'
+import react from '@vitejs/plugin-react';
 export function createDevServer(root: string) {
-    return createServer({
-        root,
-        plugins: [pluginIndexHtml(), react()]
-    })
+  return createServer({
+    root,
+    plugins: [pluginIndexHtml(), react()]
+  });
 }
