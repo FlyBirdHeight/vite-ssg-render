@@ -1,10 +1,18 @@
 {
-  "compilerOptions": {
-    "module": "commonjs",
-    "outDir": "dist",
-    "rootDir": "src",
-    "target": "ESNext",
-    "jsx": "react-jsx",
-    "esModuleInterop": true
-  }
+    "compilerOptions": {
+        "module": "ESNext",
+        "outDir": "dist",
+        "rootDir": "src",
+        "target": "ESNext",
+        "jsx": "react-jsx",
+        "moduleResolution": "node",
+        "esModuleInterop": true
+    },
+    "include": [
+        "src/**/*" // *** TypeScript文件应该进行类型检查 ***
+    ],
+    "exclude": [
+        "node_modules",
+        "build"
+    ] // *** 不进行类型检查的文件 ***}
 }
