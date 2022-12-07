@@ -1,8 +1,4 @@
-# dependencies
-/node_modules
-/.pnp
-.pnp.js
-/dist
-
-# testing
-/coverage
+node_modules
+dist
+build
+.temp
