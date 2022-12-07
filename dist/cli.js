@@ -79,6 +79,7 @@ function createDevServer(root) {
 
 
 var _fsextra = require('fs-extra'); var _fsextra2 = _interopRequireDefault(_fsextra);
+console.log("213");
 async function bundle(root) {
   const resolveViteConfig = (isServer) => ({
     mode: "production",
