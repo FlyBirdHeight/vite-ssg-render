@@ -1,59 +1,4 @@
-"use strict"; function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { newObj[key] = obj[key]; } } } newObj.default = obj; return newObj; } } function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }var __getOwnPropNames = Object.getOwnPropertyNames;
-var __commonJS = (cb, mod) => function __require() {
-  return mod || (0, cb[__getOwnPropNames(cb)[0]])((mod = { exports: {} }).exports, mod), mod.exports;
-};
-
-// package.json
-var require_package = __commonJS({
-  "package.json"(exports, module) {
-    module.exports = {
-      name: "island-ssg",
-      version: "1.0.0",
-      description: "",
-      main: "index.js",
-      scripts: {
-        test: 'echo "Error: no test specified" && exit 1',
-        start: "tsup --watch",
-        build: "tsup",
-        lint: "eslint --fix --ext .ts,.tsx,.js,.jsx ./"
-      },
-      bin: {
-        adsionli: "bin/island.js"
-      },
-      keywords: [],
-      author: "",
-      license: "ISC",
-      devDependencies: {
-        "@types/fs-extra": "^9.0.13",
-        "@types/node": "^18.11.10",
-        "@typescript-eslint/eslint-plugin": "^5.45.1",
-        "@typescript-eslint/parser": "^5.45.1",
-        eslint: "^8.29.0",
-        "eslint-config-prettier": "^8.5.0",
-        "eslint-plugin-prettier": "^4.2.1",
-        "eslint-plugin-react": "^7.31.11",
-        "eslint-plugin-react-hooks": "^4.6.0",
-        ora: "^6.1.2",
-        prettier: "^2.8.0",
-        rollup: "^3.5.1",
-        serve: "^14.1.2",
-        tsup: "^6.5.0",
-        typescript: "^4.9.3"
-      },
-      dependencies: {
-        "@vitejs/plugin-react": "^2.2.0",
-        "@vitejs/plugin-react-refresh": "^1.3.6",
-        cac: "^6.7.14",
-        "fs-extra": "^11.1.0",
-        react: "^18.2.0",
-        "react-dom": "^18.2.0",
-        vite: "3.2.4"
-      }
-    };
-  }
-});
-
-// src/node/cli.ts
+"use strict"; function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { newObj[key] = obj[key]; } } } newObj.default = obj; return newObj; } } function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }// src/node/cli.ts
 var _cac = require('cac');
 
 // src/node/dev.ts
@@ -194,7 +139,7 @@ async function build(root = process.cwd()) {
 
 // src/node/cli.ts
 
-var version = require_package().version;
+var version = "0.0.1";
 var cli = _cac.cac.call(void 0, "adsionli").version(version).help();
 cli.command("[root]", "start dev server").alias("dev").action(async (root) => {
   const server = await createDevServer(root);

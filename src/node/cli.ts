@@ -3,10 +3,9 @@ import { createDevServer } from './dev';
 import { build } from './build';
 import { resolve } from 'path';
 
-const version = require('../../package.json').version;
+const version = '0.0.1';
 
 const cli = cac('adsionli').version(version).help();
-
 cli
   .command('[root]', 'start dev server')
   .alias('dev')
