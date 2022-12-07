@@ -86,7 +86,6 @@ import { join as join2 } from "path";
 import react2 from "@vitejs/plugin-react";
 import { build as viteBuild } from "vite";
 import fs from "fs-extra";
-console.log("213");
 async function bundle(root) {
   const resolveViteConfig = (isServer) => ({
     mode: "production",
