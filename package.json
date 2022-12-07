@@ -13,6 +13,12 @@
   "bin": {
     "adsionli": "bin/island.js"
   },
+  "lint-staged": {
+    "**/*.{js,jsx,tsx,ts}": [
+      "npm run lint"
+    ],
+    "ignore": ["*.json"]
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -30,6 +36,7 @@
     "eslint-plugin-react": "^7.31.11",
     "eslint-plugin-react-hooks": "^4.6.0",
     "husky": "^8.0.2",
+    "lint-staged": "^13.1.0",
     "ora": "^6.1.2",
     "prettier": "^2.8.0",
     "rollup": "^3.5.1",

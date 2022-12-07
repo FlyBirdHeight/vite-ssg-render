@@ -6,7 +6,7 @@ import { CLIENT_ENTRY_PATH, SERVER_ENTRY_PATH } from './constants/index';
 import fs from 'fs-extra';
 // const dynamicImport = new Function('m', 'return import(m)');
 // import ora from 'ora';
-
+console.log('213');
 export async function bundle(root: string) {
   // const { default: ora } = await dynamicImport('ora');
   // const spinner = ora();
