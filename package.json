@@ -10,8 +10,12 @@
     "lint": "eslint --ext .ts,.tsx,.js,.jsx ./",
     "lint:fix": "eslint --fix --ext .ts,.tsx,.js,.jsx --quiet ./",
     "prepare": "husky install",
-    "preview": "cd build && serve .",
-    "test:unit": "vitest run"
+    "prepare:e2e": "tsx scripts/prepare-e2e.ts",
+    "preview": "cd docs/build && serve .",
+    "test:unit": "vitest run",
+    "test:watch": "vitest",
+    "test:ui": "vitest --ui",
+    "test:e2e": "playwright test"
   },
   "bin": {
     "adsionli": "bin/island.js"
@@ -27,16 +31,19 @@
   "devDependencies": {
     "@commitlint/cli": "^17.3.0",
     "@commitlint/config-conventional": "^17.3.0",
+    "@playwright/test": "1.26.1",
     "@types/fs-extra": "^9.0.13",
     "@types/node": "^18.11.10",
     "@typescript-eslint/eslint-plugin": "^5.45.1",
     "@typescript-eslint/parser": "^5.45.1",
+    "@vitest/ui": "^0.25.5",
     "commitlint": "^17.3.0",
     "eslint": "^8.29.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.31.11",
     "eslint-plugin-react-hooks": "^4.6.0",
+    "execa": "5.1.1",
     "husky": "^8.0.2",
     "lint-staged": "13.0.3",
     "ora": "^6.1.2",
@@ -44,6 +51,7 @@
     "rollup": "^3.5.1",
     "serve": "^14.1.2",
     "tsup": "^6.5.0",
+    "tsx": "^3.12.1",
     "typescript": "^4.9.3",
     "vitest": "^0.25.5"
   },
