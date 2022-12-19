@@ -10,5 +10,7 @@ export default defineConfig({
   shims: true,
   banner: {
     js: 'import { createRequire } from "module"; const require = createRequire(import.meta.url);'
-  }
+  },
+  clean: true,
+  entryPoints: ['./src/node/cli.ts', './src/node/index.ts']
 });

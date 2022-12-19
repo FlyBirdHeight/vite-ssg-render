@@ -4,13 +4,17 @@ import { build } from './build';
 import { resolve } from 'path';
 
 const version = '0.0.1';
-
+type Options = {
+  '--': any[];
+  host: string;
+};
 const cli = cac('adsionli').version(version).help();
 cli
   .command('[root]', 'start dev server')
+  .option('--host <host>', 'set you newwork host')
   .alias('dev')
-  .action(async (root: string) => {
-    const server = await createDevServer(root);
+  .action(async (root: string, options: Options) => {
+    const server = await createDevServer(root, options.host);
     await server.listen();
     server.printUrls();
   });
